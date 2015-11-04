@@ -227,8 +227,8 @@ class samba::classic(
 
   unless $adminpassword == undef {
     $ou = $joinou ? {
-      default => "createcomputer=\"$joinou\"",
-      undef   => "",
+      default => "createcomputer=\"${joinou}\"",
+      undef   => '',
     }
     exec{ 'Join Domain':
       path    => '/bin:/sbin:/usr/sbin:/usr/bin/',
